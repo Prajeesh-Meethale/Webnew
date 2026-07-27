@@ -59,7 +59,7 @@ export function CaseStudies() {
               <p className="text-sm text-indigo-500 font-semibold tracking-[0.2em] mb-4 uppercase">
                 Trusted by leaders across industries & borders
               </p>
-              <h2 className="text-2xl font-bold text-white">Organizations</h2>
+              <h2 className="text-2xl font-bold text-white heading-font">Organizations</h2>
             </div>
             <Link href="#" className="text-indigo-400 hover:text-indigo-300 text-sm font-medium inline-flex items-center gap-1 transition-colors">
               View all case studies <ArrowRight className="w-4 h-4" />

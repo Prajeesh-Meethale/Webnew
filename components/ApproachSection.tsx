@@ -41,7 +41,7 @@ export function ApproachSection() {
           {/* Left Text */}
           <div className="w-full xl:w-[22%] shrink-0">
             <p className="text-sm text-indigo-500 font-semibold tracking-[0.2em] mb-4 uppercase">OUR APPROACH</p>
-            <h2 className="text-3xl lg:text-4xl font-semibold text-white leading-tight">
+            <h2 className="text-3xl lg:text-4xl font-semibold text-white leading-tight heading-font">
               Investigation first.<br />
               Execution always.
             </h2>

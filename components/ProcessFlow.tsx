@@ -42,7 +42,7 @@ export function ProcessFlow() {
           <p className="text-sm text-indigo-500 font-semibold tracking-[0.2em] mb-4 uppercase">
             AI doesn't replace buying journeys.
           </p>
-          <h2 className="text-4xl md:text-5xl font-medium text-foreground">
+          <h2 className="text-4xl md:text-5xl font-medium text-foreground heading-font">
             It changes <span className="text-indigo-500">where</span> they begin.
           </h2>
         </div>
