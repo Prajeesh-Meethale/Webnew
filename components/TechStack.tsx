@@ -149,8 +149,4 @@ export function TechStack() {
       </div>
     </section>
   )
-}div>
-      </div>
-    </section>
-  )
 }
