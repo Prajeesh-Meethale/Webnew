@@ -1,76 +1,70 @@
 'use client'
 
-import { MapPin, Building2, Users2, Layers } from 'lucide-react'
+import { MapPin, Building2, Users, Briefcase, Globe2 } from 'lucide-react'
 
 export function GlobalPresence() {
   const locations = [
-    { name: 'Rotterdam', position: { x: 40, y: 35 } },
-    { name: 'New York', position: { x: 15, y: 38 } },
-    { name: 'Austin', position: { x: 12, y: 55 } },
-    { name: 'Tunis', position: { x: 48, y: 58 } },
-    { name: 'Bucharest', position: { x: 52, y: 40 } },
+    { name: 'Rotterdam', sub: 'Netherlands', position: { x: 52, y: 20 } },
+    { name: 'New York', sub: 'USA', position: { x: 30, y: 38 } },
+    { name: 'Austin', sub: 'Texas, USA', position: { x: 20, y: 55 } },
+    { name: 'Tunisia', sub: 'Tunisia', position: { x: 48, y: 58 } },
+    { name: 'Bucharest', sub: 'Romania', position: { x: 62, y: 40 } },
   ]
 
   const stats = [
-    { number: '5', label: 'Countries', icon: MapPin },
+    { number: '5', label: 'Countries', icon: Globe2 },
     { number: '40+', label: 'Organizations', icon: Building2 },
-    { number: '200+', label: 'Organizations', icon: Users2 },
-    { number: '6', label: 'Industries', icon: Layers },
+    { number: '200+', label: 'Investigations', icon: Users },
+    { number: '6', label: 'Industries', icon: Briefcase },
   ]
 
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mb-12">
-          <p className="text-xs text-primary uppercase tracking-widest font-semibold mb-4">GLOBAL IN PRESENCE</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            One buying shift. <br />
-            Observed across <span className="text-primary">industries</span>.
-          </h2>
-          <p className="text-lg text-muted-foreground mt-4">
-            From startups to enterprises, leaders from five countries face the same challenge.
-          </p>
-        </div>
+    <section className="py-24 bg-background">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Grid Layout: 3 Columns */}
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+          
+          {/* Left Column: Text */}
+          <div className="w-full lg:w-1/4">
+            <p className="text-sm text-indigo-500 font-semibold tracking-[0.2em] mb-4 uppercase">GLOBAL IN PRESENCE.</p>
+            <h2 className="text-3xl lg:text-4xl font-semibold text-white leading-tight">
+              One buying shift.<br />
+              Observed across<br />
+              industries.
+            </h2>
+            <p className="text-gray-400 mt-6 leading-relaxed text-sm">
+              From startups to enterprises,<br />
+              leaders from five countries<br />
+              face the same challenge.
+            </p>
+          </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Map Area - spans 2 columns on large screens */}
-          <div className="lg:col-span-2">
-            <div className="relative bg-card border border-border rounded-xl p-8 aspect-video">
-              {/* Decorative grid background */}
-              <div className="absolute inset-0 opacity-5 rounded-xl overflow-hidden">
-                <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <defs>
-                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                      <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5" />
-                    </pattern>
-                  </defs>
-                  <rect width="100" height="100" fill="url(#grid)" />
-                </svg>
-              </div>
+          {/* Center Column: Map */}
+          <div className="w-full lg:w-2/4 relative">
+            <div className="relative w-full aspect-[2/1] rounded-xl flex items-center justify-center">
+              {/* Dotted Map background representation */}
+              <div 
+                className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_#ffffff_1px,_transparent_1px)] bg-[length:8px_8px]" 
+                style={{ maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 70%)' }}
+              />
 
               {/* Location pins */}
-              <div className="relative w-full h-full">
-                {locations.map((location, index) => (
+              <div className="absolute inset-0">
+                {locations.map((location) => (
                   <div
                     key={location.name}
-                    className="absolute"
+                    className="absolute flex flex-col items-center group cursor-default"
                     style={{
                       left: `${location.position.x}%`,
                       top: `${location.position.y}%`,
                       transform: 'translate(-50%, -50%)',
                     }}
                   >
-                    <div className="relative w-8 h-8 flex items-center justify-center">
-                      {/* Ping animation */}
-                      <div className="absolute inset-0 rounded-full bg-primary animate-pulse opacity-30" />
-                      {/* Pin icon */}
-                      <div className="relative w-3 h-3 rounded-full bg-primary" />
-                    </div>
-                    {/* Location label */}
-                    <div className="mt-2 whitespace-nowrap text-xs font-medium text-foreground bg-card/80 px-2 py-1 rounded border border-border">
-                      {location.name}
+                    <MapPin className="w-6 h-6 text-indigo-500 mb-1" strokeWidth={1.5} />
+                    <div className="text-center">
+                      <div className="text-white text-xs font-medium whitespace-nowrap">{location.name}</div>
+                      <div className="text-gray-500 text-[10px] whitespace-nowrap">{location.sub}</div>
                     </div>
                   </div>
                 ))}
@@ -78,21 +72,22 @@ export function GlobalPresence() {
             </div>
           </div>
 
-          {/* Stats - right column */}
-          <div className="space-y-4">
+          {/* Right Column: Stats */}
+          <div className="w-full lg:w-1/4 flex flex-col gap-8 lg:pl-12">
             {stats.map((stat, index) => {
               const Icon = stat.icon
               return (
-                <div key={index} className="bg-card border border-border rounded-xl p-6 space-y-2">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Icon className="w-6 h-6 text-primary" />
+                <div key={index} className="flex items-start gap-5">
+                  <Icon className="w-8 h-8 text-indigo-500 shrink-0 mt-1" strokeWidth={1.5} />
+                  <div>
+                    <div className="text-2xl font-semibold text-white mb-1">{stat.number}</div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
                   </div>
-                  <div className="text-3xl font-bold text-foreground">{stat.number}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               )
             })}
           </div>
+          
         </div>
       </div>
     </section>

@@ -2,35 +2,43 @@ import { Check, Clock, Lock } from 'lucide-react'
 
 export function FooterCTA() {
   return (
-    <section className="py-20 bg-background border-t border-border">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Main CTA */}
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-          Ready to see how AI sees your business?
-        </h2>
-        <p className="text-lg text-muted-foreground mb-8">
-          Request your AI Visibility Investigation.
-        </p>
+    <section className="py-24 bg-background border-t border-white/5">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-16">
+          
+          {/* Left Side: Text and Badges */}
+          <div>
+            <h2 className="text-4xl lg:text-5xl font-medium text-white mb-3">
+              Ready to see how AI sees your business?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Request your AI Visibility Investigation.
+            </p>
+            
+            {/* Trust Badges */}
+            <div className="flex flex-wrap items-center gap-6">
+              <div className="flex items-center gap-2">
+                <Check className="w-5 h-5 text-gray-400" />
+                <span className="text-sm text-gray-400">No commitment</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Lock className="w-5 h-5 text-gray-400" />
+                <span className="text-sm text-gray-400">Confidential</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-gray-400" />
+                <span className="text-sm text-gray-400">Delivered in 48-72 hours</span>
+              </div>
+            </div>
+          </div>
 
-        {/* Button */}
-        <button className="px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors inline-flex items-center gap-2 text-lg mb-12">
-          Request Investigation →
-        </button>
+          {/* Right Side: Button */}
+          <div className="shrink-0">
+            <button className="px-8 py-4 bg-[#6366F1] hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors inline-flex items-center gap-2">
+              Request Investigation →
+            </button>
+          </div>
 
-        {/* Trust Badges */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-          <div className="flex items-center gap-2">
-            <Check className="w-5 h-5 text-primary" />
-            <span className="text-sm text-muted-foreground">No commitment</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Lock className="w-5 h-5 text-primary" />
-            <span className="text-sm text-muted-foreground">Confidential</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5 text-primary" />
-            <span className="text-sm text-muted-foreground">Delivered in 48-72 hours</span>
-          </div>
         </div>
       </div>
 
