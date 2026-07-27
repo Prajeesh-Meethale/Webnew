@@ -1,78 +1,80 @@
-import { MessageSquare, Brain, FileText, Globe, CheckCircle } from 'lucide-react'
+import { MessageSquare, Bot, ListChecks, Globe, CalendarCheck, Info, ArrowRight } from 'lucide-react'
 
 export function ProcessFlow() {
   const steps = [
     {
       number: 1,
-      title: 'Buyer has a problem',
+      title: 'Buyer has\na problem',
       icon: MessageSquare,
+      color: 'text-purple-500',
     },
     {
       number: 2,
-      title: 'Asks AI for options',
-      icon: Brain,
+      title: 'Asks AI\nfor options',
+      icon: Bot,
+      color: 'text-green-500',
     },
     {
       number: 3,
-      title: 'Creates shortlist',
-      icon: FileText,
+      title: 'Creates\nshortlist',
+      icon: ListChecks,
+      color: 'text-orange-500',
     },
     {
       number: 4,
-      title: 'Visits websites',
+      title: 'Visits\nwebsites',
       icon: Globe,
+      color: 'text-blue-500',
     },
     {
       number: 5,
-      title: 'Books meeting',
-      icon: CheckCircle,
+      title: 'Books\nmeeting',
+      icon: CalendarCheck,
+      color: 'text-green-500',
     },
   ]
 
   return (
-    <section className="py-20 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-background">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-xs text-primary uppercase tracking-widest font-semibold mb-4">
-            AI DOESN&apos;T REPLACE BUYING JOURNEYS.
+          <p className="text-sm text-indigo-500 font-semibold tracking-[0.2em] mb-4 uppercase">
+            AI doesn't replace buying journeys.
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            It changes{' '}
-            <span className="text-primary">where they begin</span>.
+          <h2 className="text-4xl md:text-5xl font-medium text-foreground">
+            It changes <span className="text-indigo-500">where</span> they begin.
           </h2>
         </div>
 
         {/* Process Flow */}
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-2 mb-12">
+        <div className="relative">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 mb-16">
             {steps.map((step, index) => {
               const Icon = step.icon
               return (
-                <div key={step.number} className="flex flex-col md:flex-row items-center gap-4 md:gap-2 flex-1">
-                  {/* Step Circle */}
-                  <div className="flex flex-col items-center gap-4 flex-1">
-                    <div className="w-24 h-24 rounded-full border-2 border-border bg-card/50 flex items-center justify-center">
-                      <Icon className="w-10 h-10 text-primary" />
+                <div key={step.number} className="flex flex-col md:flex-row items-center flex-1">
+                  {/* Step Box */}
+                  <div className="flex flex-col items-center gap-4">
+                    <div className="w-20 h-20 rounded-2xl border border-white/10 bg-[#12131A] flex items-center justify-center shadow-lg">
+                      <Icon className={`w-8 h-8 ${step.color}`} strokeWidth={1.5} />
                     </div>
-                    <p className="text-center font-semibold text-foreground text-sm">{step.title}</p>
+                    <p className="text-center text-gray-300 text-sm whitespace-pre-line leading-snug">
+                      {step.title}
+                    </p>
                   </div>
 
                   {/* Arrow - hidden on last item */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                    <div className="hidden md:flex flex-1 items-center justify-center -mt-8">
+                      <ArrowRight className="w-5 h-5 text-gray-600" strokeWidth={1.5} />
                     </div>
                   )}
 
                   {/* Mobile arrow */}
                   {index < steps.length - 1 && (
-                    <div className="md:hidden text-muted-foreground">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
+                    <div className="md:hidden text-gray-600 my-4">
+                      <ArrowRight className="w-5 h-5 rotate-90 md:rotate-0" strokeWidth={1.5} />
                     </div>
                   )}
                 </div>
@@ -81,12 +83,10 @@ export function ProcessFlow() {
           </div>
 
           {/* Footer Note */}
-          <div className="text-center border-t border-border pt-8 mt-8">
-            <div className="inline-flex items-center gap-2 text-muted-foreground text-sm">
-              <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span>If AI doesn&apos;t recommend you, your website never gets the opportunity to sell.</span>
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-3 bg-[#12131A] border border-white/10 rounded-full px-6 py-3 text-sm text-gray-300">
+              <Info className="w-4 h-4 text-indigo-500" />
+              <span>If AI doesn't recommend you, your website never gets the opportunity to sell.</span>
             </div>
           </div>
         </div>
