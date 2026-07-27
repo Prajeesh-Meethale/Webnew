@@ -9,7 +9,7 @@
 @layer utilities {
   .heading-font { @apply font-serif; }
   .glass {
-    @apply bg-white/10 backdrop-blur-md rounded-xl border border-white/20;
+    @apply bg-white/[0.02] backdrop-blur-[24px] rounded-2xl border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.3)] ring-1 ring-white/5;
   }
 }
 
