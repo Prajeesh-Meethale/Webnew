@@ -12,31 +12,30 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 backdrop-blur-sm mb-4">
             <p className="text-[11px] text-indigo-300 uppercase tracking-[0.25em] font-bold">
-              AI VISIBILITY INVESTIGATION & EXECUTION
+              AI VISIBILITY & ACQUISITION
             </p>
           </div>
 
           {/* Main Headline */}
           <div className="space-y-6 flex flex-col items-center">
             <h1 className="text-[44px] leading-[1.05] md:text-[68px] font-bold text-white tracking-[-0.01em] heading-font">
-              Buyers are already asking AI who to hire. <br />
+              Turn AI from a black box into your <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 drop-shadow-sm">
-                We investigate why your business isn&apos;t one of the answers.
+                highest-converting lead engine.
               </span>
             </h1>
             <p className="text-[17px] md:text-[21px] text-[#A1A1AA] leading-[1.6] max-w-2xl font-medium mt-2">
-              We run buyer-intent prompts across leading AI systems, analyze what&apos;s recommended, and uncover the structural gaps
-              keeping you off the shortlist.
+              Buyers are already asking AI who to hire. We don&apos;t just investigate why you aren&apos;t recommended—we engineer the exact signals ChatGPT, Claude, and Gemini need to confidently place you on every executive shortlist.
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center w-full sm:w-auto">
             <button className="px-8 py-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-all inline-flex items-center justify-center gap-2 shadow-[0_0_30px_rgba(79,70,229,0.4)]">
-              See Sample Investigation <ArrowRight className="w-5 h-5" />
+              See Case Studies <ArrowRight className="w-5 h-5" />
             </button>
             <button className="px-8 py-4 glass hover:bg-white/[0.05] text-white font-semibold rounded-xl transition-colors inline-flex items-center justify-center">
-              Get Free AI Audit
+              Get Free AI Strategy
             </button>
           </div>
 
