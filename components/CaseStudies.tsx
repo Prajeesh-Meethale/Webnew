@@ -123,7 +123,7 @@ export function CaseStudies() {
               {/* Top: Logo and Location Pill */}
               <div className="flex flex-wrap items-center justify-between gap-4 mb-10 relative z-10">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 shadow-inner">
+                  <div className="w-12 h-12 flex items-center justify-center shrink-0">
                     {caseItem.icon}
                   </div>
                   <span className="font-semibold text-gray-200">{caseItem.name}</span>
