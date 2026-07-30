@@ -50,34 +50,27 @@ export function ProcessFlow() {
 
         {/* Process Flow */}
         <div className="relative">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0 mb-20">
+          <div className="flex overflow-x-auto md:overflow-visible pb-8 md:pb-0 items-start md:items-center justify-start md:justify-between gap-0 mb-20 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {steps.map((step, index) => {
               const Icon = step.icon
               return (
-                <div key={step.number} className="flex flex-col md:flex-row items-center flex-1 group">
+                <div key={step.number} className="flex items-start md:items-center shrink-0 snap-center group first:ml-4 last:mr-4 md:first:ml-0 md:last:mr-0">
                   {/* Step Box */}
-                  <div className="flex flex-col items-center gap-5">
-                    <div className="w-[88px] h-[88px] glass flex items-center justify-center relative overflow-hidden transition-all duration-500 group-hover:-translate-y-1 group-hover:border-indigo-500/30 group-hover:shadow-[0_8px_30px_rgba(79,70,229,0.2)]">
+                  <div className="flex flex-col items-center gap-4 md:gap-5 w-[130px] md:w-auto">
+                    <div className="w-[72px] h-[72px] md:w-[88px] md:h-[88px] glass flex items-center justify-center relative overflow-hidden transition-all duration-500 group-hover:-translate-y-1 group-hover:border-indigo-500/30 group-hover:shadow-[0_8px_30px_rgba(79,70,229,0.2)]">
                       {/* Subtle inner glow on hover */}
                       <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      <Icon className={`w-8 h-8 ${step.color} relative z-10 transition-transform duration-500 group-hover:scale-110`} strokeWidth={1.5} />
+                      <Icon className={`w-6 h-6 md:w-8 md:h-8 ${step.color} relative z-10 transition-transform duration-500 group-hover:scale-110`} strokeWidth={1.5} />
                     </div>
-                    <p className="text-center text-[#A1A1AA] text-[15px] font-medium whitespace-pre-line leading-[1.4] transition-colors duration-300 group-hover:text-white">
+                    <p className="text-center text-[#A1A1AA] text-[13px] md:text-[15px] font-medium whitespace-pre-line leading-[1.4] transition-colors duration-300 group-hover:text-white">
                       {step.title}
                     </p>
                   </div>
 
                   {/* Arrow - hidden on last item */}
                   {index < steps.length - 1 && (
-                    <div className="hidden md:flex flex-1 items-center justify-center -mt-10">
-                      <ArrowRight className="w-5 h-5 text-white/15" strokeWidth={1.5} />
-                    </div>
-                  )}
-
-                  {/* Mobile arrow */}
-                  {index < steps.length - 1 && (
-                    <div className="md:hidden text-white/15 my-4">
-                      <ArrowRight className="w-5 h-5 rotate-90 md:rotate-0" strokeWidth={1.5} />
+                    <div className="flex items-center justify-center w-6 md:w-auto md:flex-1 mt-7 md:mt-0 md:-mt-10">
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/15" strokeWidth={1.5} />
                     </div>
                   )}
                 </div>
