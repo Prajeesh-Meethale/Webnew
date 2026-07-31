@@ -56,7 +56,7 @@ export function HeroSection() {
       <div className="absolute top-0 inset-x-0 h-[600px] bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(123,92,255,0.25),transparent_70%)] -z-10" />
       <div className="absolute top-0 inset-x-0 h-[400px] bg-[radial-gradient(ellipse_40%_40%_at_50%_0%,rgba(75,50,255,0.4),transparent_80%)] -z-10" />
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
           {/* Left Column: Content */}
           <div className="space-y-8 max-w-2xl">

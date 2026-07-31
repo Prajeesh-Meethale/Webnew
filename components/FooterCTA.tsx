@@ -3,7 +3,7 @@ import { Check, Clock, Lock } from 'lucide-react'
 export function FooterCTA() {
   return (
     <section className="py-24 bg-background border-t border-white/5">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8 mb-16">
           
           {/* Left Side: Text and Badges */}
