@@ -93,7 +93,6 @@ export function GlobalPresence() {
               <div className="absolute inset-0 bg-radial from-transparent to-200%" />
               
               <DottedMap<MyMarker>
-                mapColor="#3f3f46"
                 markers={markers}
                 renderMarkerOverlay={({ marker, x, y, r, index }) => {
                   const { countryCode, label } = marker.overlay

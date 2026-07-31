@@ -32,9 +32,9 @@ export function CaseStudies() {
     {
       name: 'AgileCatalyst',
       heading: 'Dominating B2B consulting queries',
-      location: 'Not available',
+      location: 'Austin, Texas',
       industry: 'Consulting',
-      flag: '🇺🇸',
+      flagImage: '/Flag_of_the_United_States.svg',
       icon: <img src="/Agile catalyst.png" alt="AgileCatalyst Logo" className="w-7 h-7 object-contain" />,
       quote: '"It\'s not about ranking higher. It\'s about being understood."',
       author: {
